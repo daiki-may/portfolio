@@ -7,9 +7,14 @@
 
     /* メニューを見やすく */
     nav ul {
-        flex-direction: column; /* 横並び→縦並び */
-        align-items: center;
-        gap: 10px;
+        flex-wrap: nowrap; /* 折り返しを防ぐ */
+        justify-content: center; /* メニューを中央寄せ */
+        gap: 10px; /* スマホでは間隔を縮小 */
+    }
+
+    nav a {
+        font-size: 14px; /* スマホ時のフォントを小さく */
+        padding: 5px 10px; /* 余白を少し減らす */
     }
 
     /* コンテンツ幅を広く */
@@ -36,9 +41,11 @@
 
     /* フォントサイズ調整 */
     h1 {
-        font-size: 28px;
+        font-size: 24px; /* スマホ用に小さくする */
+        top: 30%;
+        left: 10px;
+        padding-left: 10px;
     }
-
     h2 {
         font-size: 24px;
     }
