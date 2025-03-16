@@ -22,7 +22,7 @@
             background-color: #ffffff;
             padding: 20px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 800;
+            z-index: 1000; 
         }
         .container {
             width: 80%;
@@ -131,6 +131,10 @@
             }          
         }
         @media (max-width: 768px) {
+            header {
+                padding: 10px 0; /* スマホでは高さを縮小 */
+                min-height: 50px; /* ヘッダーの最小高さ */
+            }
             h1 {
                 font-size: 24px;
                 top: 30%;
