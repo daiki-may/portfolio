@@ -133,11 +133,11 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 24px;
-                top: 30%;
+                margin-bottom: 0; /* 余計な下の余白を削除 */
+                top: 50%;
                 left: 10px;
                 padding-left: 10px;
             }
-
             nav ul {
                 list-style: none;
                 padding: 0;
@@ -148,12 +148,18 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 10px 0; /* ヘッダー全体の高さを縮める */
+            }
             nav ul {
                 flex-wrap: nowrap;
                 justify-content: center;
                 gap: 10px;
                 padding-bottom: -500px; /* 下の余白を縮める */
                 margin-bottom: 0; /* 追加の余白を削除 */
+                margin: 0;
+                padding: 0;
+                align-items: center;
             }
 
             nav a {
