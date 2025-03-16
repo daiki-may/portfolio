@@ -117,8 +117,8 @@
                 max-width: 100%;
             }
             .about-image {
-                width: 80%;
-                max-width: 60vw;
+                width: 90%;
+                max-width: 80vw;
                 height: auto;
                 border-radius: 8px;
                 overflow: hidden;
@@ -145,9 +145,6 @@
                 justify-content: flex-end;
                 gap: 20px;
             }
-            nav {
-                    margin-top: 100px; /* ← メニューバーをさらに下にずらす */
-                }
         }
 
         @media (max-width: 768px) {
@@ -158,8 +155,8 @@
             }
 
             nav a {
-                font-size: 14px;
-                padding: 5px 10px;
+                padding: 10px 0 15px; /* 上の余白を減らし、下を広げる */
+                display: inline-block; /* 縦の余白を適用するため */
             }
         }
         .info-section {
