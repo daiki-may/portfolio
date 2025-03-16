@@ -153,28 +153,28 @@
                 left: 10px;
                 padding-left: 10px;
             }
-            header {
-                padding: 10px 0; /* ヘッダー全体の高さを縮める */
-            }
+
             nav ul {
-                flex-wrap: nowrap;
-                justify-content: center;
-                padding-bottom: -500px; /* 下の余白を縮める */
-                margin-bottom: 0; /* 追加の余白を削除 */
-                margin: 0;
-                padding: 0;
-                align-items: center;
                 list-style: none;
                 padding: 0;
                 display: flex;
                 justify-content: flex-end;
                 gap: 20px;
             }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: nowrap;
+                justify-content: center;
+                gap: 10px;
+            }
 
             nav a {
                 font-size: 14px;
                 padding: 5px 10px;
             }
+        }
             .about-text h2 {
                 margin-top: 50px; /* h2の余白を狭くする */
             }
