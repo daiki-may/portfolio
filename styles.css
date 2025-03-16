@@ -1,134 +1,49 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 24px;
-            margin: 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-        }
-        .content-section {
-            padding: 100px 0 50px;
-            text-align: left;
-        }
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #111;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .project-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .project-item img {
-            width: 100%;
-            border-radius: 4px;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Your Name</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Project</a></li>
-                    <li><a href="#publications">Publication</a></li>
-                    <li><a href="#activities">Activity</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <section id="about" class="content-section">
-        <div class="container">
-            <h2>About</h2>
-            <p>ここに自己紹介を記載。</p>
-        </div>
-    </section>
+/* ✅ レスポンシブ対応 */
+@media (max-width: 768px) {
+    /* ヘッダーをコンパクトに */
+    header {
+        padding: 10px 0; /* 上下の余白を減らす */
+    }
 
-    <section id="projects" class="content-section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-item"><img src="project1.jpg" alt="Project 1"><p>Project 1</p></div>
-                <div class="project-item"><img src="project2.jpg" alt="Project 2"><p>Project 2</p></div>
-                <div class="project-item"><img src="project3.jpg" alt="Project 3"><p>Project 3</p></div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="publications" class="content-section">
-        <div class="container">
-            <h2>Publications</h2>
-            <p>研究業績を記載。</p>
-        </div>
-    </section>
-    
-    <section id="activities" class="content-section">
-        <div class="container">
-            <h2>Activities</h2>
-            <p>活動内容を記載。</p>
-        </div>
-    </section>
-    
-    <section id="contact" class="content-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>連絡先情報を記載。</p>
-        </div>
-    </section>
-</body>
-</html>
+    /* メニューを見やすく */
+    nav ul {
+        flex-direction: column; /* 横並び→縦並び */
+        align-items: center;
+        gap: 10px;
+    }
 
+    /* コンテンツ幅を広く */
+    .container {
+        width: 90%;
+        margin: 100px auto 50px; /* ヘッダーと被らないようにする */
+    }
+
+    /* 画像の最適化 */
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 画像を小さく */
+    }
+
+    .image-gallery img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* SNSアイコン */
+    .social-icons a {
+        width: 40px; /* 小さくする */
+        height: auto;
+    }
+
+    /* フォントサイズ調整 */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .contact-container {
+        padding: 20px; /* 余白を適度に */
+    }
+}
