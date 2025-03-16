@@ -153,12 +153,20 @@
                 justify-content: center;
                 gap: 10px;
             }
-            header {
-                padding: 5px 0; /* ヘッダーの高さを減らす */
-            }
+
             nav a {
-                padding: 5px -1 -5px; /* 上の余白を減らし、下を広げる */
-                display: inline-block; /* 縦の余白を適用するため */
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            .about-text h2 {
+                margin-top: 50px; /* h2の余白を狭くする */
+            }
+            .about-text h3 {
+                margin-bottom: 5px; /* h3とpの間隔を狭くする */
+            }
+            .about-text p {
+                line-height: 1.4; /* 行間を狭くする（デフォルトは1.6〜1.8） */
+                margin-bottom: 10px; /* 次の要素との間隔を狭める */
             }
         }
         .info-section {
