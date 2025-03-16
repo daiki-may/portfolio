@@ -30,8 +30,6 @@
             max-width: 90%;
             margin: 50px auto;
             text-align: left;
-            padding: 0 20px; /* ← スマホ時の左右余白を確保 */
-            box-sizing: border-box; /* ← これを追加 */
         }
         h2, h3 {
             font-family: 'Quicksand', serif;
@@ -112,11 +110,6 @@
             object-fit: cover;
         }
         @media (max-width: 768px) {
-            .container {
-                width: 90%; /* 画面幅に合わせて調整 */
-                padding: 0 15px; /* ← スマホ用の左右余白 */
-                box-sizing: border-box; /* ← これを追加 */
-            }
             .about-container {
                 flex-direction: column;
                 align-items: center;
