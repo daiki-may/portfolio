@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Daiki Mayumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kensington&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif; /* フォントを変更 */
+            font-family: 'Kensington', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: left;
+        }
+        h2, h3 {
+            font-family: 'Quicksand', serif;
+            text-align: left;  /* 左揃え */
+            margin-left: 0;  /* 左側の余白を統一 */
+        }
+        h1 {
+            font-family: 'Quicksand', serif;
+            font-size: 40px; /* 文字を大きく */
+            font-weight: bold;
+            margin: 0;
+            padding-left: 40px; /* 左へ移動 */
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%); /* ヘッダーの中央に配置 */ /* 左側に移動 */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .content-section {
+            display: none;
+            padding: 100px 0 50px;
+            text-align: left;
+        }
+        .active {
+            display: block;
+        }
+        h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        .about-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .about-text {
+            flex: 1;
+            max-width: 60%;
+            text-align: left;
+        }
+        .about-text h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .about-image {
+            width: 60%;
+            max-width: 550px;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            transform: translate(0%, -5%);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .about-text {
+                max-width: 100%;
+            }
+            .about-image {
+                width: 50%;
+                max-width: 200px;
+                transform: none;
+            }
+        }
+        .info-section {
+            margin-top: 40px;
+        }
+        .info-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-section li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            margin-top: 150px; /* 画像を下にずらす */
+        }
+        .project-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background: none; /* 白いボックスを削除 */
+            box-shadow: none; /* 影を削除 */
+            border-radius: 0; /* 角の丸みを削除 */
+            padding: 0; /* 内側の余白を削除 */
+        }
+        .project-item img {
+            width: 100%;
+            height: 250px; /* 画像サイズを統一 */
+            object-fit: cover; /* 画像のアスペクト比を維持しつつトリミング */
+            display: block;
+            transition: 0.3s ease-in-out;
+        }
+        .project-item:hover img {
+            filter: brightness(70%);
+        }
+        .project-title {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .video-container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .description {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        .publication {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 1000px;
+        }
+        .publication a {
+            color: #000000 !important; /* 薄い水色系 */
+            text-decoration: none;
+        }
+
+        .publication a:hover {
+            color: #000000 !important; /* ホバー時に少し濃い水色 */
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Daiki Mayumi</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html">Project</a></li>
+                    <li><a href="publications.html">Publication</a></li>
+                    <li><a href="activities.html">Activity</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="about" class="content-section active">
+        <div class="publication">
+            <h2 style="margin-top: 120px;">Activity</h2>
+            <div class="info-section">
+                <h3>Exhibition</h3>
+                <ol>
+                    <li>
+                        <strong><a href="https://kuma-foundation.org/gallery/event/kuma-experiment24-25_07/" target="_blank">KUMA experiment 2024-25 vol.7 『余白/blank/freiraum/空白（Kung¹ baak⁶）』</a></strong>, クマ財団, 2025.3.1-9
+                    </li>
+                    <li>
+                        <strong><a href="https://www.naist.jp/pressrelease/2022/12/009546.html" target="_blank">米・ラスベガスで開催される世界最大級の見本市 「CES2023」への出展について</a></strong>, CES2023, 2023.1.5-8
+                    </li>
+                </ol>
+                <h3>Awards</h3>
+                <ol>
+                    <li>
+                        <strong>「NIPPON INNOVATION AWARD ノミネート」</strong>, UPDATE EARTH コンペティション, UPDATE EARTH, 2024
+                    </li>
+                    <li>
+                        <strong>「ジェネレーションアワード ノミネート」</strong>, ジェネレーションアワード, 異能vation, 2024
+                    </li>
+                    <li>
+                        <strong>「アイデア賞」</strong>, 学生ビジネスプランコンテスト, 一般社団法人学生サポートセンター, 2021
+                    </li>
+                    <li>
+                        <strong>「最優秀賞」</strong>,  技育CAMP No.7, 株式会社サポーターズ, 2021
+                    </li>
+                    <li>
+                        <strong>「優秀賞」</strong>,  技育展, 株式会社サポーターズ, 2021
+                    </li>
+                    <li>
+                        <strong>「オーディエンス賞」</strong>,  Dx HACK User's voice "Solve the problem", BIPROGY Inc., 2021
+                    </li>
+                </ol>
+                <h3>Events</h3>
+                <ol>
+                    <li>
+                        <strong><a href="https://kuma-foundation.org/gallery/event/kuma-experiment24-25_07/" target="_blank">KUMA experiment 2024-25 vol.7 『余白/blank/freiraum/空白（Kung¹ baak⁶）』</a></strong>, クマ財団, 2025.3.1-9
+                    </li>
+                    <li>
+                        <strong>近鉄百貨店生駒店 SDGsイベント</strong>, IoTで飲み物を味変！香りを使って健康に, 2022.11.05
+                    </li>
+                    <li>
+                        <strong>近鉄百貨店生駒店 HAPIECO WEEK（ハピエコウィーク）</strong>, IoTトングで環境美化に貢献, 2022.05.21-22
+                    </li>
+                    <li>
+                        <strong>大阪うめきた外庭SQUAREでのゴミ拾いイベント（SWEEP UP活動）</strong>, 2022.04.02
+                    </li>
+                    <li>
+                        <strong><a href="https://www.city.ikoma.lg.jp/0000028835.html" target="_blank">IoTトングでひろえば街が好きになる運動 with Rethink PROJECT</a></strong>, 2022.03.19
+                    </li>
+                    <li>
+                        <strong><a href="https://web.archive.org/web/20211022155912/https://www.city.ikoma.lg.jp/0000027442.html" target="_blank">令和3年度 生駒市総合防災訓練</a></strong>, 避難シミュレーション・避難所運営シミュレーション, 2021.11.14
+                    </li>
+                </ol>
+                <h3>Articles</h3>
+                <ol>
+                    <li>
+                        <strong><a href="https://kuma-foundation.org/news/11504/" target="_blank">KUMA experiment 2024-25 vol.7 『余白/blank/freiraum/空白（Kung¹ baak⁶）』</a></strong>, クマ財団, 2025
+                    </li>
+                    <li>
+                        <strong><a href="https://kuma-foundation.org/news/11504/" target="_blank">クマ財団の「クリエイター奨学金」第8期生が決定！</a></strong>, クマ財団, 2024
+                    </li>
+                    <li>
+                        <strong><a href="http://isw3.naist.jp/IS/is-fellowship/pr/index.html" target="_blank">創発的人材育成フェローシップ採択者</a></strong>, 2023
+                    </li>
+                    <li>
+                        <strong>奈良先端科学技術大学院大学 | 広報誌せんたん 2022年1月号</strong>, 知の扉を開く「市民参加でリアルな情報を集め、高度なスマート社会を実現する」, 2022.01.30
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

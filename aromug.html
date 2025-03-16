@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aromug</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Kensington', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto; /* ヘッダーの高さを考慮し 120px に変更 */
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Quicksand', serif;
+            font-size: 40px; /* 文字を大きく */
+            font-weight: bold;
+            margin: 0;
+            padding-left: 40px; /* 左へ移動 */
+            text-align: center; /* 中央揃え */
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%); /* ヘッダーの中央に配置 */ /* 左側に移動 */
+        }
+        .video-container {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin: 30px 0;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        h2, h3 {
+            font-family: 'Quicksand', serif;
+        }
+        .description, .abstract, .publication {
+            text-align: left;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        .publication a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .publication a:hover {
+            text-decoration: underline;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .about-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .about-text {
+            flex: 1;
+            max-width: 60%;
+        }
+        .about-text h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-family: 'Quicksand', serif;
+            font-size: 40px; /* 大きめのフォント */
+            font-weight: bold;
+            text-align: center; /* 中央揃え */
+            margin-top: 200px; /* ヘッダーの高さを考慮して調整 */
+            padding-bottom: 10px; /* 下に余白を確保 */
+        }
+    </style>
+    <script>
+        function openModal(src) {
+            document.getElementById("modal-image").src = src;
+            document.getElementById("image-modal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("image-modal").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Daiki Mayumi</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_self">About</a></li>
+                    <li><a href="projects.html" target="_self">Project</a></li>
+                    <li><a href="publications.html" target="_self">Publication</a></li>
+                    <li><a href="activities.html" target="_self">Activity</a></li>
+                    <li><a href="contact.html" target="_self">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="title">Aromug</div>
+        <div class="video-container">
+            <iframe src="https://youtu.be/NT1Fj_eqnJA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="image-gallery">
+            <img src="image/project/aromug/aromug.jpeg" alt="aromug Image 1" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug1.jpg" alt="aromug Image 2" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug2.jpg" alt="aromug Image 3" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug3.jpg" alt="aromug Image 4" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug4.png" alt="aromug Image 5" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug5.jpg" alt="aromug Image 6" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug6.jpg" alt="aromug Image 7" onclick="openModal(this.src)">
+            <img src="image/project/aromug/aromug7.jpg" alt="aromug Image 8" onclick="openModal(this.src)">
+        </div>
+
+        <div id="image-modal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="">
+        </div>
+
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>
+                Sugary beverages are a significant contributor to sugar consumption, and their excessive consumption is associated with increased risks of elevated blood glucose levels and diabetes. Many individuals have a strong preference for sugary beverages and often find beverages with lower sugar content to be less satisfying. Attempts to switch to less sugary options are frequently short-lived, leading to a return to higher-sugar beverages. Recognizing that 75 - 95% of taste perception is influenced by scent, we investigated a scent-based approach to reduce sugar intake while preserving the perception of sweetness. This study introduces an olfactory interface in the form of a mug named "Aromug, designed to emit a sweet scent in sync with the drinking action. Aromug incorporates motion sensing and scent presentation functions to enhance the perceived sweetness of a beverage, thereby encouraging a gradual reduction in sugar intake. Our experiments, involving 33 participants, demonstrated that the combined scents of sugar-free coffee and chocolate increased the perception of sweetness (p = 0.01641). The study also found that the simultaneous presentation of scent and visual cues improved taste satisfaction and sweetness perception. Additionally, we observed variations in sweetness preference related to age and frequency of coffee consumption. It was particularly observed that people in their 20s and those who frequently drink coffee tend to perceive the taste of beverages as sweeter. This suggests a potential for Aromug to customize the scent experience based on individual preferences, offering a novel way to encourage healthier beverage choices.
+            </p>
+        </div>
+
+        <div class="publication">
+            <h2>Publication</h2>
+            <p>
+                Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Shinya Misaki, Keiichi Yasumoto:“Aromug: a Mug-type Olfactory Interface to Enhance the Sweetness Perception of Beverages,”IEEE Access, Vol.12, pp. 78366-78378, 2024.
+                DOI: <a href="https://ieeexplore.ieee.org/document/10530960?source=authoralert" target="_blank">https://ieeexplore.ieee.org/document/10530960?source=authoralert</a>
+            </p>
+            <p>
+               Daiki Mayumi, Yugo Nakamura, Shinya Misaki, Yuki Matsuda and Keiichi Yasumoto: “Aromug: Mug-type Olfactory Interface to Assist in Reducing Sugar Intake," The 5th International Workshop on Computing for Well-Being (WellComp '22), pp.183-187, Cambridge, UK, Sept. 15, 2022.
+                DOI: <a href="https://dl.acm.org/doi/abs/10.1145/3544793.3563402" target="_blank">https://dl.acm.org/doi/abs/10.1145/3544793.3563402</a>
+            </p>
+            <p>
+               真弓大輝, 中村優吾, 三崎慎也, 松田裕貴, 安本慶一: “Aromug: 糖分摂取量低減を補助するスマートマグカップの設計と基礎評価”, マルチメディア, 分散, 協調とモバイル（DICOMO 2022）シンポジウム論文集, pp.981-988, オンライン, 2022年7月.
+            </p>
+            <p>
+               真弓大輝, 中村優吾, 松田裕貴, 安本慶一: “Aromug：糖分摂取量低減を補助するスマートマグカップの検討”, 情報処理学会 IoT行動変容学研究グループ キックオフシンポジウム, pp.19-22, 東京都渋谷区, 2022年4月.
+            </p>
+
+        </div>
+    </div>
+</body>
+</html>
