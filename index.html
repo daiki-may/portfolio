@@ -74,13 +74,13 @@
         }
         .about-container {
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
             justify-content: space-between;
             gap: 40px;
         }
         .about-text {
             flex: 1;
-            max-width: 60%;
+            max-width: 50%;
             text-align: left;
         }
         .about-text h2 {
@@ -95,16 +95,18 @@
             margin-bottom: 15px;
         }
         .about-image {
-            width: 60%;
+            width: 45%;
             max-width: 40vw;
+            margin-top: 10vh; /* ← この数値で下への移動量を調整 */
             height: auto;
-            border-radius: 8px;
+            border-radius: 20px;
             overflow: hidden;
-            transform: translate(0%, -5%);
+            transform: translate(-3%, -5%);
         }
         .about-image img {
-            width: 100%;
+            width: 90%;
             height: auto;
+            border-radius: 20px;
             object-fit: cover;
         }
         @media (max-width: 768px) {
@@ -301,7 +303,7 @@
                 </div>
             </div>
             <div class="info-section">
-                <h3>Education</h3>
+                <h3 style="margin-top: -60px;">Education</h3>
                 <ul>
                     <li>2024.04 - 2026.03 Ph.D Course of Institute of Communications Engineering, Ulm University, Germany</li>
                     <li>2023.04 - 2026.03 Ph.D Course of Information Science, Nara Institute of Science and Technology, Japan</li>
