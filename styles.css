@@ -1,56 +1,389 @@
-/* ✅ レスポンシブ対応 */
+body {
+    font-family: 'Quicksand', sans-serif; /* フォントを変更 */
+    font-family: 'Kensington', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+}
+.container {
+    width: 80%;
+    max-width: 90%;
+    margin: 50px auto;
+    text-align: left;
+}
+h2, h3 {
+    font-family: 'Quicksand', serif;
+}
+h1 {
+    font-family: 'Quicksand', serif;
+    font-size: 40px; /* 文字を大きく */
+    font-weight: bold;
+    margin: 0;
+    padding-left: 40px; /* 左へ移動 */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* ヘッダーの中央に配置 */ /* 左側に移動 */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 0;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #5DADE2; /* おしゃれな薄水色 */
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #6c9fcb;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.content-section {
+    display: none;
+    padding: 100px 0 50px;
+    text-align: left;
+}
+.active {
+    display: block;
+}
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111;
+}
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+.about-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+.about-image {
+    width: 45%;
+    max-width: 40vw;
+    margin-top: 13.2vh; /* ← この数値で下への移動量を調整 */
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translate(-3%, -5%);
+}
+.about-image img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
 @media (max-width: 768px) {
-    /* ヘッダーをコンパクトに */
-    header {
-        padding: 10px 0; /* 上下の余白を減らす */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-
-    /* メニューを見やすく */
-    nav ul {
-        flex-wrap: nowrap; /* 折り返しを防ぐ */
-        justify-content: center; /* メニューを中央寄せ */
-        gap: 10px; /* スマホでは間隔を縮小 */
-    }
-
-    nav a {
-        font-size: 14px; /* スマホ時のフォントを小さく */
-        padding: 5px 10px; /* 余白を少し減らす */
-    }
-
-    /* コンテンツ幅を広く */
-    .container {
-        width: 90%;
-        margin: 100px auto 50px; /* ヘッダーと被らないようにする */
-    }
-
-    /* 画像の最適化 */
-    .image-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 画像を小さく */
-    }
-
-    .image-gallery img {
-        height: auto;
+    .about-text {
         max-width: 100%;
     }
-
-    /* SNSアイコン */
-    .social-icons a {
-        width: 40px; /* 小さくする */
+    .about-image {
+        width: 90%;
+        max-width: 80vw;
         height: auto;
+        border-radius: 8px;
+        overflow: hidden;
+        transform: translate(0%, -5%);
     }
-
-    /* フォントサイズ調整 */
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .publication {
+        width: 90%; /* ← 画面いっぱいにならないように調整 */
+        max-width: 100%;
+        padding: 0 15px; /* ← 左右に適度な余白を確保 */
+        margin-bottom: 50px; /* ← 画面下に余白を追加 */
+    }          
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0; /* スマホでは高さを縮小 */
+        min-height: 50px; /* ヘッダーの最小高さ */
+    }
     h1 {
-        font-size: 24px; /* スマホ用に小さくする */
+        font-size: 24px;
         top: 30%;
         left: 10px;
         padding-left: 10px;
     }
-    h2 {
-        font-size: 24px;
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .contact-container {
-        padding: 20px; /* 余白を適度に */
+    nav a {
+        font-size: 14px;
+        padding: 5px 10px;
     }
+}
+    .about-text h2 {
+        margin-top: 50px; /* h2の余白を狭くする */
+    }
+    .about-text h3 {
+        margin-bottom: 5px; /* h3とpの間隔を狭くする */
+    }
+    .about-text p {
+        line-height: 1.4; /* 行間を狭くする（デフォルトは1.6〜1.8） */
+        margin-bottom: 10px; /* 次の要素との間隔を狭める */
+    }
+}
+.info-section {
+    margin-top: 40px;
+}
+.info-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+.info-section li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    margin-top: 150px; /* 画像を下にずらす */
+}
+.project-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background: none; /* 白いボックスを削除 */
+    box-shadow: none; /* 影を削除 */
+    border-radius: 0; /* 角の丸みを削除 */
+    padding: 0; /* 内側の余白を削除 */
+}
+.project-item img {
+    width: 100%;
+    height: 250px; /* 画像サイズを統一 */
+    object-fit: cover; /* 画像のアスペクト比を維持しつつトリミング */
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+.project-item:hover img {
+    filter: brightness(70%);
+}
+.project-title {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+.video-container {
+    margin: 40px auto;
+    max-width: 800px;
+}
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+}
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ホバー時にズーム・シャドウ・浮き上がり */
+.image-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.description {
+    text-align: left;
+    margin: 30px auto;
+    max-width: 800px;
+
+}
+.publication {
+    text-align: left;
+    margin: 30px auto;
+    max-width: 1110px;
+    padding: 0 20px; /* ← 左右の余白を追加 */
+    box-sizing: border-box; /* ← 余白を確実に適用 */
+}
+.publication a {
+    color: #4f83e3 !important; /* 薄い水色系 */
+    text-decoration: none;
+}
+.publication a:hover {
+    color: #4f83e3 !important; /* ホバー時に少し濃い水色 */
+    text-decoration: underline;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.title {
+    font-family: 'Quicksand', serif;
+    font-size: 40px; /* 大きめのフォント */
+    font-weight: bold;
+    text-align: center; /* 中央揃え */
+    margin-top: 200px; /* ヘッダーの高さを考慮して調整 */
+    padding-bottom: 10px; /* 下に余白を確保 */
+}
+.description, .abstract, .publication {
+    text-align: left;
+    margin: 30px auto;
+    max-width: 800px;
+}
+.contact-info a {
+    color: #3498db; /* おしゃれな水色 */
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact-info a:hover {
+    color: #217dbb; /* ホバー時に少し濃い青 */
+    text-decoration: underline;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-icons a {
+    display: inline-block;
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s;
+}
+.social-icons a img {
+    width: 100%;
+    height: auto;
+}
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+.contact-container {
+    text-align: center;
+    margin-top: 320px; /* ヘッダー分の余白を確保 */
+    padding: 50px;
 }

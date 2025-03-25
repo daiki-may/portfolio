@@ -6,184 +6,6 @@
     <title>Aroma Nudges</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            font-family: 'Kensington', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .container {
-            width: 80%;
-            max-width: 90%;
-            margin: 50px auto; /* ヘッダーの高さを考慮し 120px に変更 */
-            text-align: center;
-        }
-        h1 {
-            font-family: 'Quicksand', serif;
-            font-size: 40px; /* 文字を大きく */
-            font-weight: bold;
-            margin: 0;
-            padding-left: 40px; /* 左へ移動 */
-            text-align: center; /* 中央揃え */
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%); /* ヘッダーの中央に配置 */ /* 左側に移動 */
-        }
-        .video-container {
-            margin: 40px auto;
-            max-width: 800px;
-        }
-        .video-container iframe {
-            width: 100%;
-            height: 450px;
-        }
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-            margin: 30px 0;
-        }
-        .image-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-        }
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #111;
-        }
-        h2, h3 {
-            font-family: 'Quicksand', serif;
-        }
-        .description, .abstract, .publication {
-            text-align: left;
-            margin: 30px auto;
-            max-width: 800px;
-        }
-        .publication a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .publication a:hover {
-            text-decoration: underline;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .about-container {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        .about-text {
-            flex: 1;
-            max-width: 60%;
-        }
-        .about-text h2 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .about-text p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .title {
-            font-family: 'Quicksand', serif;
-            font-size: 40px; /* 大きめのフォント */
-            font-weight: bold;
-            text-align: center; /* 中央揃え */
-            margin-top: 200px; /* ヘッダーの高さを考慮して調整 */
-            padding-bottom: 10px; /* 下に余白を確保 */
-        }
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 0; /* スマホでは高さを縮小 */
-                min-height: 50px; /* ヘッダーの最小高さ */
-            }
-            h1 {
-                font-size: 24px;
-                top: 30%;
-                left: 10px;
-                padding-left: 10px;
-            }
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: nowrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 14px;
-                padding: 5px 10px;
-            }
-        }
-    </style>
     <script>
         function openModal(src) {
             document.getElementById("modal-image").src = src;
@@ -212,7 +34,7 @@
     <div class="container">
         <div class="title">Aroma Nudges</div>
         <div class="video-container">
-            <iframe src="https://youtu.be/NT1Fj_eqnJA" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0V-3QlqT11c" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="image-gallery">
             <img src="image/project/aromanudge/aromanudge.jpg" alt="aromanudge Image 1" onclick="openModal(this.src)">
@@ -235,14 +57,13 @@
             </p>
         </div>
 
-        <div class="publication">
+        <div class="abstract">
             <h2>Publication</h2>
             <p>
                 Junko Nohara, Tomo Kusunoki, Daiki Mayumi, Yuki Matsuda, Yugo Nakamura and Emiko Iwata: “Examination of Effective Deliciousness Transmission Method That Leads to Purchasing Behavior of Yamato (Another Name for Nara, the Ancient Capital of Japan)’s Traditional Vegetable "Yamato-maru Eggplant" That Makes Full Use of Nudge Theory and Information," Poster, The 8th Asian Congress of Dietetics (ACD '22), Oct. 19-21, 2022.
             </p>
             <p>
-               Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Tomokazu Matsui, Shinya Misaki, Keiichi Yasumoto, Junko Nohara: “Aroma Nudges: Exploring the Effects on Shopping Behavior in a Supermarket," International Workshop on Digital Nudging and Digital Persuasion (DNDP '22), Vol.3153, pp.1-11, Mar. 29, 2022.
-                DOI: <a href="https://ceur-ws.org/Vol-3153/" target="_blank">https://ceur-ws.org/Vol-3153/</a>
+               Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Tomokazu Matsui, Shinya Misaki, Keiichi Yasumoto, Junko Nohara: “Aroma Nudges: Exploring the Effects on Shopping Behavior in a Supermarket," International Workshop on Digital Nudging and Digital Persuasion (DNDP '22), Vol.3153, pp.1-11, Mar. 29, 2022. <a href="https://ceur-ws.org/Vol-3153/" target="_blank">DOI</a>
             </p>
             <p>
                真弓大輝, 中村優吾, 松田裕貴, 松井智一, 三崎慎也, 安本慶一, 野原潤子: “香りナッジが実店舗の購買行動に及ぼす影響の調査”, 第15回行動変容と社会システム研究会（BCSS）/ 社会システムと情報技術研究ウィーク（WSSIT '22）, Vol.8, pp.1-6, 北海道虻田郡, 2022年3月.
