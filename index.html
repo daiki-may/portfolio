@@ -1,73 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kensington&display=swap" rel="stylesheet">
+    <title>Daiki Mayumi | Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<body onload="showSection('about')">
+<body>
+    <div id="intro-overlay">
+        <div class="intro-text">LOADING...</div>
+    </div>
+
+    <canvas id="canvas-bg"></canvas>
+
     <header>
-        <div class="container">
-            <h1>Daiki Mayumi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="projects.html">Project</a></li>
-                    <li><a href="publications.html">Publication</a></li>
-                    <li><a href="activities.html">Activity</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <a href="index.html">
+                DAIKI MAYUMI <span class="logo-accent">//</span> RESEARCH
+            </a>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html#projects">Work</a></li>
+                <li><a href="publications.html">Pubs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <section id="about" class="content-section active">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2 style="margin-top: 80px;">Daiki Mayumi</h2>
-                    <h3>Born in Hyogo, Japan, in 1998.</h3>
-                    <p>I am currently enrolled in the Ph.D course at Nara Institute of Science and Technology (NAIST) and Ulm University (Germany). My research focuses on systems that support changes in purchasing behavior and on changing behaviors towards healthier dietary habits. Specifically, I am working on the development and operation of a purchasing behavior modification system using scents, an olfactory interface to help reduce sugar intake, and a voice dialogue system that imparts knowledge about healthy eating. I also analyze and evaluate the collected data. In addition, I am involved in numerous projects, working daily on research aimed at realizing smart cities and smart lifestyles.</p>
-                </div>
-                <div class="about-image">
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="reveal">
+                Designing<br>
+                Behavior Change.
+            </h1>
+            
+            <div class="hero-description reveal" style="transition-delay: 0.2s;">
+                <p class="typing-text">
+                    Bridging the gap between digital & physical worlds through<br>
+                    <span class="text-highlight">Human-Computer Interaction (HCI)</span> and <span class="text-highlight">Human-Food Interaction (HFI)</span>.
+                </p>
+                <p class="hero-detail">
+                    I explore novel <strong>Olfactory Interfaces</strong> and <strong>Ubiquitous Computing</strong> systems to understand human behaviors subtly. My goal is to design "calm technology" that naturally guides people toward healthier lifestyles and smarter decision-making without being intrusive.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="reveal">
+            <span class="section-title">About Me</span>
+            
+            <div class="about-layout">
+                <div class="about-img-container">
                     <img src="image/pic.JPG" alt="Profile Picture">
                 </div>
+
+                <div>
+                    <div style="margin-bottom: 3rem;">
+                        <p style="font-family:var(--font-code); color:var(--accent); margin-bottom:1rem;">BIOGRAPHY</p>
+                        <p style="color: #ccc; margin-bottom: 1rem; font-size:1.05rem;">
+                            I am currently enrolled in the Ph.D course at Nara Institute of Science and Technology (NAIST) and Ulm University (Germany). My research focuses on systems that support changes in purchasing behavior and on changing behaviors towards healthier dietary habits.
+                        </p>
+                        <p style="color: #ccc; margin-bottom: 1rem; font-size:1.05rem;">
+                            Specifically, I am working on the development of olfactory interfaces to help reduce sugar intake, and voice dialogue systems for food knowledge. I am driven by the goal of realizing smart cities and smart lifestyles through ubiquitous computing.
+                        </p>
+                    </div>
+
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; color:#fff;">Education</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <span class="timeline-date">2023.04 - Present</span>
+                            <h4 class="timeline-title">Ph.D Course (Double Degree)</h4>
+                            <p class="timeline-desc">NAIST (Japan) & Ulm University (Germany)</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">2021.04 - 2023.03</span>
+                            <h4 class="timeline-title">Master of Information Science</h4>
+                            <p class="timeline-desc">Nara Institute of Science and Technology, Japan.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="info-section">
-                <h3 style="margin-top: 60px;">Education</h3>
-                <ul>
-                    <li>2024.04 - 2026.03 Ph.D Course of Institute of Communications Engineering, Universität Ulm, Germany</li>
-                    <li>2023.04 - 2026.03 Ph.D Course of Information Science, Nara Institute of Science and Technology, Japan</li>
-                    <li>2021.04 - 2023.03 Master of Information Science, Nara Institute of Science and Technology, Japan</li>
-                    <li>2017.04 - 2021.03 Bachelor of Engineering, Osaka Institute of Technology, Japan</li>
+        </section>
+
+        <section id="projects" class="reveal">
+            <span class="section-title">Selected Projects</span>
+            <div class="projects-grid">
+                
+                <a href="bubbleat.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="image/project/bubbleat/bubbleat.JPG" alt="BubblEat">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tags">CHI EA '25 / HFI</span>
+                        <h3 class="project-title">BubblEat</h3>
+                        <p style="color:#aaa;">Bubble-based olfactory delivery system.</p>
+                    </div>
+                </a>
+
+                <a href="kaolid.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="image/project/kaolid/kaolid.JPG" alt="Kaolid">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tags">IoT '23 / HFI</span>
+                        <h3 class="project-title">Kaolid</h3>
+                        <p style="color:#aaa;">Lid-type olfactory interface.</p>
+                    </div>
+                </a>
+
+                <a href="aromug.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="image/project/aromug/aromug.jpeg" alt="Aromug">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tags">IEEE Access / HFI</span>
+                        <h3 class="project-title">Aromug</h3>
+                        <p style="color:#aaa;">Scent-based sugar reduction interface.</p>
+                    </div>
+                </a>
+
+                <a href="arcade.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="image/project/arcade/arcade.png" alt="ARCADE">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tags">ICMI '24 / AR</span>
+                        <h3 class="project-title">ARCADE</h3>
+                        <p style="color:#aaa;">AR environment for dietary agents.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="publications" class="reveal">
+            <span class="section-title">Publications</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <ul class="pub-list">
+                    <li class="pub-item">
+                        <span class="pub-title">BubblEat: Designing a Bubble-Based Olfactory Delivery for Retronasal Smell in Every Spoonful</span>
+                        <span class="pub-meta">Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Keiichi Yasumoto. <strong>CHI EA '25</strong>, Yokohama, Japan.</span>
+                    </li>
+                    <li class="pub-item">
+                        <span class="pub-title">Aromug: a Mug-type Olfactory Interface to Enhance the Sweetness Perception of Beverages</span>
+                        <span class="pub-meta">Daiki Mayumi et al. <strong>IEEE Access</strong>, Vol.12, 2024.</span>
+                    </li>
+                    <li class="pub-item">
+                        <span class="pub-title">Kaolid: a Lid-type Olfactory Interface to Present Retronasal Smell towards Beverage Flavor Augmentation</span>
+                        <span class="pub-meta">Daiki Mayumi et al. <strong>IoT '23</strong>, Nagoya, Japan. (Best Paper Candidate)</span>
+                    </li>
                 </ul>
             </div>
-            <div class="info-section">
-                <h3 style="margin-top: 60px;">Work Experience</h3>
-                <ul>
-                    <li>2024.04 - 2026.03 NAIST Granite Program</li>
-                    <li>2024.04 - 2025.03 Kuma Foundation, Creators' Scholarship (AI)</li>
-                    <li>2024.04 - 2025.03 Universität Ulm of Germany, Visiting Researcher</li>
-                    <li>2023.04 - 2024.03 NAIST University Fellowships for the Creation of Innovation in Science and Technology Recipients</li>
-                    <li>2023.04 - 2023.06 Universität Ulm of Germany, Visiting Researcher</li>
-                    <li>2022.08 - 2023.07 (Internship) Howtelevision, Inc., Data Science Engineer</li>
-                    <li>2022.07 - 2023.06 (Joint research) Globeride, Inc., Data Analysis</li>
-                    <li>2021.11 - 2021.12 (Internship) FAST RETAILING CO., LTD., Data Science Engineer</li>
-                    <li>2021.05 - 2025.03 (Joint research) YOMIURI TELECASTING CORPORATION, Data Analysis</li>
-                </ul>
+            <a href="publications.html" class="btn-link">View All Publications -></a>
+        </section>
+
+        <section id="contact" class="reveal" style="text-align: center; border:none;">
+            <span class="section-title" style="font-size: 2rem; margin-bottom:1rem;">Contact</span>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                <a href="mailto:mayumi.daiki.mb9@is.naist.jp" style="border-bottom: 1px solid var(--accent);">mayumi.daiki.mb9@is.naist.jp</a>
+            </p>
+            <div class="social-link-container">
+                <a href="https://www.linkedin.com/in/daiki-mayumi/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://www.facebook.com/daikimay.jp/" target="_blank" class="social-link">Facebook</a>
+                <a href="https://www.instagram.com/daiki__mym_/" target="_blank" class="social-link">Instagram</a>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
+    <footer>&copy; 2025 Daiki Mayumi.</footer>
+    <script src="main.js"></script>
 </body>
 </html>
