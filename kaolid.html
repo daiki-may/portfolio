@@ -1,96 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaolid</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Kaolid | Daiki Mayumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function openModal(src) {
-            document.getElementById("modal-image").src = src;
-            document.getElementById("image-modal").style.display = "flex";
-        }
-        function closeModal() {
-            document.getElementById("image-modal").style.display = "none";
-        }
-    </script>
 </head>
 <body>
+    <canvas id="canvas-bg"></canvas>
+
     <header>
-        <div class="container">
-            <h1>Daiki Mayumi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" target="_self">About</a></li>
-                    <li><a href="projects.html" target="_self">Project</a></li>
-                    <li><a href="publications.html" target="_self">Publication</a></li>
-                    <li><a href="activities.html" target="_self">Activity</a></li>
-                    <li><a href="contact.html" target="_self">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo"><a href="index.html">DAIKI MAYUMI</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects" class="active">Work</a></li>
+                <li><a href="publications.html">Pubs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <div class="title">Kaolid</div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/NT1Fj_eqnJA" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="image-gallery">
-            <img src="image/project/kaolid/kaolid.JPG" alt="kaolid Image 1" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid1.jpg" alt="kaolid Image 2" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid2.jpg" alt="kaolid Image 3" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid3.jpg" alt="kaolid Image 4" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid4.jpg" alt="kaolid Image 5" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid5.jpg" alt="kaolid Image 6" onclick="openModal(this.src)">
-            <img src="image/project/kaolid/kaolid6.jpg" alt="kaolid Image 7" onclick="openModal(this.src)">
+
+    <main class="container">
+        
+        <div class="reveal" style="padding-top: 150px; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.1;">Kaolid</h1>
+            <p style="color:var(--accent); font-family:var(--font-code);">Human-Computer Interaction / Human-Food Interaction / Olfactory Interface</p>
         </div>
 
-        <div id="image-modal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img id="modal-image" src="">
+        <div class="video-wrapper reveal" style="margin-top: 3rem; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border:1px solid #222;">
+            <iframe src="https://www.youtube.com/embed/NT1Fj_eqnJA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <div class="abstract">
-            <h2>Abstract</h2>
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Abstract</span>
             <p>
-                In this paper, we introduce Kaolid, an olfactory interface that uses a lid mechanism to augment the flavor of beverages by delivering scents as retronasal smell. Kaolid aims to promote the consumption of healthier beverages by intensifying their perceived taste through the release of scents during drinking. The system features a compact olfactory display and an IMU sensor, triggering scents in response to drinking movements. It comes in two models: a straw-type for cold beverages and a cup-type for hot drinks. We tested the interface using sparkling and hot water and measured its efficacy in enhancing perceived sweetness when paired with scents. Results showed significant enhancements in all evaluation metrics (taste satisfaction, perceived sweetness, and preference) with the straw-type device. Notably, the perceived sweetness increased by an amount equivalent to about 2.88 grams of sugar when a retronasal smell was introduced compared to when no scent was present. This innovative interface holds promise in elevating the flavor of sugar-free drinks and could support those aiming to limit sugar consumption. Furthermore, this research contributes to the future of IoT systems for health support by harnessing the power of scent, opening avenues for novel approaches in sensory-driven well-being advancements.
+                Human taste perception is inherently multisensory, created by integrating olfactory and visual cues. This provides an opportunity to augment flavor experiences through multimodal digital interfaces. We present Kaolid+, a lid-based interface that enhances beverage flavor by simultaneously manipulating aroma and color. While the influence of retronasal smell on taste is known, prior work has not sufficiently explored the difference between orthonasal smell and retronasal smell, nor their synergistic effect with dynamic visual cues. Kaolid+ addresses this gap by integrating a retronasal smell diffuser with an RGB light to change the drink's perceived color. In a user study with unflavored carbonated water, we found that retronasal smell significantly increased perceived sweetness and satisfaction over orthonasal smell. Crucially, combining retronasal smell with congruent visual cues further amplified this taste augmentation effect. Our findings demonstrate that a strategic combination of vision and olfaction can effectively augment taste perception, presenting a practical approach for enhancing beverage experiences. This work contributes a new framework for sensory-driven health and wellness applications in IoT, showing how technology can subtly shape perception to encourage healthier choices.
             </p>
-        </div>
+        </section>
 
-        <div class="abstract">
-            <h2>Publication</h2>
-            <p>
-                Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Shinya Misaki, Keiichi Yasumoto: "Kaolid: a Lid-type Olfactory Interface to Present Retronasal Smell towards Beverage Flavor Augmentation,"The 13th International Conference on the Internet of Things (IoT'23), pp.1-8, Nagoya, Japan, Nov. 7-10, 2023. <a href="https://dl.acm.org/doi/10.1145/3627050.3627056" target="_blank">DOI</a>
-            </p>
-            <p>
-               Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Kentaro Ueda, Shinya Misaki and Keiichi Yasumoto: "Kaolid: Lid-type Olfactory Interface to Improve Taste of Beverages with Ortho-Retronasal Smell,"The 20th International Conference on Pervasive Computing and Communications (PerCom '23), Demo, Atlanta, USA, pp.303-305, Mar. 13-17, 2023. <a href="https://www.computer.org/csdl/proceedings-article/percom-workshops/2023/10150412/1O9TNZGDilq" target="_blank">DOI</a>
-            </p>
-            <p>
-               真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一: “飲料体験を拡張する充電不要な蓋型嗅覚インターフェースの実現に向けた基礎検討”, 第19回行動変容と社会システム研究会（BCSS）/ 社会システムと情報技術研究ウィーク（WSSIT '24）, Vol.8, pp.1-6, 北海道虻田郡, 2024年3月.
-            </p>
-            <p>
-               真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一: “Kaolid：飲料の味変化のための口中香を実現する蓋型嗅覚デバイスの設計と基礎評価”, 情報処理学会 IoT行動変容学研究グループ 第3回研究会 (BTI3), pp.1-8, 福岡県福岡市, 2023年3月.
-            </p>
-            <p>
-               真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一: “鼻腔経路の異なる香りを提示可能なデバイスの設計と味覚に与える影響の基礎評価”, デモ, 第30回マルチメディア通信と分散処理ワークショップ（DPSWS2022）, pp.175-180, 鳥取県米子市, 2022年10月.
-            </p>
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Gallery</span>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid1.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid2.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid3.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid4.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid5.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid6.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/kaolid/kaolid7.jpg" alt="img"></div>
+            </div>
+        </section>
 
-        </div>
+        <section class="reveal" style="border: none;">
+            <span class="section-title" style="font-size: 2.5rem;">Publication</span>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">Kaolid: a Lid-type Olfactory Interface to Present Retronasal Smell towards Beverage Flavor Augmentation</span>
+                    <span class="pub-meta">Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Shinya Misaki, Keiichi Yasumoto. The 13th International Conference on the Internet of Things (IoT'23), pp.1-8, Nagoya, Japan, Nov. 7-10, 2023. <a href="https://dl.acm.org/doi/10.1145/3627050.3627056" target="_blank" style="color:var(--accent);">[DOI]</a></span><span class="badge-award">Best Paper Candidate Award</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-title">Kaolid: Lid-type Olfactory Interface to Improve Taste of Beverages with Ortho-Retronasal Smell</span>
+                    <span class="pub-meta">Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Kentaro Ueda, Shinya Misaki and Keiichi Yasumoto. The 20th International Conference on Pervasive Computing and Communications (PerCom '23), Demo, Atlanta, USA, pp.303-305, Mar. 13-17, 2023. <a href="https://www.computer.org/csdl/proceedings-article/percom-workshops/2023/10150412/1O9TNZGDilq" target="_blank" style="color:var(--accent);">[DOI]</a></span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-title">飲料体験を拡張する充電不要な蓋型嗅覚インターフェースの実現に向けた基礎検討</span>
+                    <span class="pub-meta">真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一. 第19回行動変容と社会システム研究会（BCSS）/ 社会システムと情報技術研究ウィーク（WSSIT '24）, Vol.8, pp.1-6, 北海道虻田郡, 2024年3月. </span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-title">Kaolid：飲料の味変化のための口中香を実現する蓋型嗅覚デバイスの設計と基礎評価</span>
+                    <span class="pub-meta">真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一. 情報処理学会 IoT行動変容学研究グループ 第3回研究会 (BTI3), pp.1-8, 福岡県福岡市, 2023年3月. </span><span class="badge-award">最優秀発表賞</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-title">鼻腔経路の異なる香りを提示可能なデバイスの設計と味覚に与える影響の基礎評価</span>
+                    <span class="pub-meta">真弓大輝, 中村優吾, 松田裕貴, 三崎慎也, 安本慶一. 第30回マルチメディア通信と分散処理ワークショップ（DPSWS2022）, デモ, pp.175-180, 鳥取県米子市, 2022年10月. </span><span class="badge-award">優秀デモンストレーション賞</span>
+                </li>
+            </ul>
+        </section>
 
-        <div class="abstract">
-            <h2>Awards</h2>
-            <p>
-                <strong>「Best Paper Candidate Award」</strong>, The 13th International Conference on the Internet of Things (IoT'23)
-            </p>
-            <p>
-                <strong>「最優秀発表賞」</strong>, IoT行動変容学研究グループ 第3回研究会 (BTI3)
-            </p>
-            <p>
-                <strong>「優秀デモンストレーション賞」 </strong>, 第30回マルチメディア通信と分散処理ワークショップ（DPSWS2022）
-            </p>
+    </main>
 
-        </div>
-    </div>
+    <footer>&copy; 2025 Daiki Mayumi.</footer>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PneuSpoon | Daiki Mayumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">DAIKI MAYUMI</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects" class="active">Work</a></li>
+                <li><a href="publications.html">Pubs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div class="reveal" style="padding-top: 150px; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.1;">PneuSpoon</h1>
+            <p style="color:var(--accent); font-family:var(--font-code);">Human-Computer Interaction / Human-Food Interaction / Olfactory Interface</p>
+        </div>
+
+        <div class="video-wrapper reveal" style="margin-top: 3rem; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border:1px solid #222;">
+            <iframe src="https://www.youtube.com/embed/WDSZVuv1rj4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Abstract</span>
+            <p>
+                Eating is a multisensory experience that integrates taste, smell, vision, and touch. Among these, retronasal smell—the aroma perceived through the mouth—plays a crucial role in flavor perception and preference formation. However, synchronizing scent presentation with dynamic eating behaviors such as chewing and swallowing remains challenging due to the difficulty of precisely controlling airflow. This paper presents PneuSpoon, a pneumatically actuated spoon-shaped device that delivers scent directly into the oral cavity on a bite-by-bite basis. The device stores scent inside a silicone balloon beneath the spoon before eating; when the user brings the spoon to the mouth and the balloon is gently compressed, the stored scent is released in synchrony with eating. A pneumatic circuit inspired by fluidic logic enables switching and mixing of multiple scents for controlled presentation. Through a formative design exploration, we identified design parameters—such as balloon shape and depth—that balance tactile comfort and scent intensity. Building on these insights, a controlled user study with real food demonstrated that retronasal smell presentation increased taste satisfaction by 25%, confirming that taste perception can be modulated through this approach. Finally, this work proposes a framework for designing and controlling the inherently environmental sense of smell from the artifact side, extending the Ubiquitous Computing vision of ''computation that blends into the environment'' into the domain of multisensory flavor experiences.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Gallery</span>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon1.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon2.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon3.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon4.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon5.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon6.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon7.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon8.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/pneuspoon/pneuspoon9.png" alt="img"></div>
+            </div>
+        </section>
+
+        <section class="reveal" style="border: none;">
+            <span class="section-title" style="font-size: 2.5rem;">Publication</span>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">PneuSpoon: Designing a Pneumatic Olfactory Spoon for Retronasal Flavor Augmentation during Eating</span>
+                    <span class="pub-meta">Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Keiichi Yasumoto. Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2025.</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>&copy; 2025 Daiki Mayumi.</footer>
+    <script src="main.js"></script>
+</body>
+</html>

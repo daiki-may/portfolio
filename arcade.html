@@ -1,74 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arcade</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>ARCADE | Daiki Mayumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function openModal(src) {
-            document.getElementById("modal-image").src = src;
-            document.getElementById("image-modal").style.display = "flex";
-        }
-        function closeModal() {
-            document.getElementById("image-modal").style.display = "none";
-        }
-    </script>
 </head>
 <body>
+    <canvas id="canvas-bg"></canvas>
+
     <header>
-        <div class="container">
-            <h1>Daiki Mayumi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" target="_self">About</a></li>
-                    <li><a href="projects.html" target="_self">Project</a></li>
-                    <li><a href="publications.html" target="_self">Publication</a></li>
-                    <li><a href="activities.html" target="_self">Activity</a></li>
-                    <li><a href="contact.html" target="_self">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo"><a href="index.html">DAIKI MAYUMI</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects" class="active">Work</a></li>
+                <li><a href="publications.html">Pubs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <div class="title">ARCADE</div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Jw-PLukplxQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="image-gallery">
-            <img src="image/project/arcade/arcade.png" alt="arcade Image 1" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade1.JPG" alt="arcade Image 2" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade2.JPG" alt="arcade Image 3" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade3.JPG" alt="arcade Image 4" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade4.JPG" alt="arcade Image 5" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade5.JPG" alt="arcade Image 6" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade6.JPG" alt="arcade Image 7" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade7.JPG" alt="arcade Image 8" onclick="openModal(this.src)">
-            <img src="image/project/arcade/arcade8.JPG" alt="arcade Image 9" onclick="openModal(this.src)">
+
+    <main class="container">
+        
+        <div class="reveal" style="padding-top: 150px; text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.1;">ARCADE</h1>
+            <p style="color:var(--accent); font-family:var(--font-code);">Persuasive Technology / Human-Food Interaction / Dialogue System</p>
         </div>
 
-        <div id="image-modal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img id="modal-image" src="">
+        <div class="video-wrapper reveal" style="margin-top: 3rem; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border:1px solid #222;">
+            <iframe src="https://www.youtube.com/embed/Jw-PLukplxQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <div class="abstract">
-            <h2>Abstract</h2>
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Abstract</span>
             <p>
-                In this paper, we introduce the concept of a spoken dialogue system, which aims to recognize user eating behaviors during meals and promotes healthier eating habits by engaging users in an interactive co-dining experience. To provide an intuitive and more natural access, this information is integrated into a natural conversation with the user. Therefore, we conducted a preliminary study to explore how a human-like virtual avatar's eating speed affects the eating pace of a co-dining user. The results indicate that dining together with an avatar reduces the user's feeling of loneliness and enhances the overall satisfaction and enjoyment of the meal. Therefore, this work represents an important step toward realizing engaging co-dining experiences with human-like avatars and provides new insights into the future design of IoT systems to support solitary dining and health recommendations.
+                This research presents a multimodal conversational system for dietary education during solitary eating, integrating voice guidance, visual information, and agent non-verbal behaviors. The our system uses a utensil-mounted camera for real-time food recognition and ARCADE, a spatial augmented reality display to enable natural interaction with an avatar. Two experiments with Japanese (n=35) and German (n=35) participants were conducted to evaluate the system. Experiment 1 compared three presentation modalities via a web implementation, showing multimodal presentation enhanced educational effectiveness and satisfaction. Experiment 2 with the real, physical system achieved higher ratings, with users resistant to conventional voice assistants showing particularly high satisfaction. Cultural differences emerged in valued aspects - Japanese users preferred emotional engagement, Germans focused on information quality - yet both groups favored the multimodal approach. The findings demonstrate that multimodal integration effectively addresses solitary eating issues while promoting healthier dietary behaviors.
             </p>
-        </div>
+        </section>
 
-        <div class="abstract">
-            <h2>Publication</h2>
-            <p>
-                Carolin Schindler, Daiki Mayumi, Yuki Matsuda, Niklas Rach, Keiichi Yasumoto, Wolfgang Minker: "ARCADE: An Augmented Reality Display Environment for Multimodal Interaction with Conversational Agents,"The 26th ACM International Conference on Multimodal Interaction (ICMI'24), Demo, pp.85-87, San José, Costa Rica, Nov. 4-8, 2024. <a href="https://dl.acm.org/doi/10.1145/3686215.3688376" target="_blank">DOI</a>
-            </p>
-            <p>
-               Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Annalena Aicher, Keiichi Yasumoto, Wolfgang Minker: "Design of a Spoken Dialogue System to Provide Food Knowledge to Users while Eating,"The 13th International Conference on the Internet of Things (IoT'23), Poster, pp.154-157, Nagoya, Japan, Nov. 7-10, 2023. <a href="https://dl.acm.org/doi/10.1145/3627050.3630728" target="_blank">DOI</a>
-            </p>
-        </div>
-    </div>
+        <section class="reveal">
+            <span class="section-title" style="font-size: 2.5rem;">Gallery</span>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image/project/arcade/arcade.png" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade1.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade2.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade3.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade4.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade5.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade6.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade7.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade8.JPG" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade9.jpg" alt="img"></div>
+                <div class="gallery-item"><img src="image/project/arcade/arcade10.jpg" alt="img"></div>
+            </div>
+        </section>
+
+        <section class="reveal" style="border: none;">
+            <span class="section-title" style="font-size: 2.5rem;">Publication</span>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">ARCADE: An Augmented Reality Display Environment for Multimodal Interaction with Conversational Agents</span>
+                    <span class="pub-meta">Carolin Schindler, Daiki Mayumi, Yuki Matsuda, Niklas Rach, Keiichi Yasumoto, Wolfgang Minker. The 26th ACM International Conference on Multimodal Interaction (ICMI'24), Demo, pp.85-87, San José, Costa Rica, Nov. 4-8, 2024. <a href="https://dl.acm.org/doi/10.1145/3686215.3688376" target="_blank" style="color:var(--accent);">[DOI]</a></span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-title">Design of a Spoken Dialogue System to Provide Food Knowledge to Users while Eating</span>
+                    <span class="pub-meta">Daiki Mayumi, Yugo Nakamura, Yuki Matsuda, Annalena Aicher, Keiichi Yasumoto, Wolfgang Minker. The 13th International Conference on the Internet of Things (IoT'23), Poster, pp.154-157, Nagoya, Japan, Nov. 7-10, 2023. <a href="https://dl.acm.org/doi/10.1145/3627050.3630728" target="_blank" style="color:var(--accent);">[DOI]</a></span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>&copy; 2025 Daiki Mayumi.</footer>
+    <script src="main.js"></script>
 </body>
 </html>
