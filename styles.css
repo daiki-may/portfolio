@@ -66,8 +66,9 @@ header {
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(12px);
-    background: rgba(8, 8, 8, 0.7);
+    background: rgba(8, 8, 8, 0.8);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
 }
 .logo {
     font-family: var(--font-code);
@@ -138,7 +139,6 @@ section { padding: 8rem 0; border-bottom: 1px solid #111; }
     margin: 0 0 2rem 0;
     color: #fff;
 }
-/* Enhanced Hero Description */
 .hero-description {
     border-left: 3px solid var(--accent);
     padding-left: 1.5rem;
@@ -277,7 +277,7 @@ section { padding: 8rem 0; border-bottom: 1px solid #111; }
 .pub-meta { display: block; font-family: var(--font-code); font-size: 0.85rem; color: #888; }
 .pub-section-header { font-size: 1.5rem; color: var(--accent); margin-top: 3rem; margin-bottom: 1.5rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
 
-/* Badge Award (Used in Pub List) */
+/* Badge Award */
 .badge-award {
     display: inline-block;
     background: linear-gradient(90deg, #ffcc00 0%, #ffaa00 100%);
@@ -318,10 +318,61 @@ section { padding: 8rem 0; border-bottom: 1px solid #111; }
 /* Footer */
 footer { text-align: center; padding: 4rem 0; font-family: var(--font-code); font-size: 0.8rem; color: #555; }
 
+/* --- Mobile Optimization (Fix for Overlap & Size) --- */
 @media(max-width: 768px) {
-    header { padding: 1rem; }
-    .hero h1 { font-size: 3.5rem; }
-    .section-title { font-size: 2.5rem; }
-    .about-layout { grid-template-columns: 1fr; }
+    /* Header Stack Layout */
+    header {
+        padding: 0.8rem 1rem; /* パディングを削減 */
+        flex-direction: column; /* ロゴとメニューを縦に並べる */
+        gap: 0.8rem; /* 間隔を詰める */
+        background: rgba(8, 8, 8, 0.98); /* 視認性確保のため背景を濃く */
+    }
+    
+    .logo { 
+        font-size: 0.9rem; /* ロゴサイズ縮小 */
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .logo a { justify-content: center; } 
+
+    nav ul { 
+        gap: 0.8rem; 
+        flex-wrap: nowrap; /* 1行に収める */
+        width: 100%;
+        justify-content: center;
+    }
+    
+    nav a { 
+        font-size: 0.7rem; /* メニュー文字サイズ縮小 */
+        letter-spacing: 0;
+        padding: 0.3rem 0; /* タップ領域確保 */
+    }
+
+    /* Hero Fix: Add Top Padding to avoid overlap */
+    .hero { 
+        padding-top: 180px; /* 重要：ヘッダー被り回避のために余白を大きく確保 */
+        justify-content: flex-start; 
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem; /* タイトル文字サイズ縮小 */
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .typing-text { font-size: 1rem; }
+    .hero-detail { font-size: 0.9rem; }
+
+    /* Other Mobile Adjustments */
+    .section-title { font-size: 2.2rem; margin-bottom: 2rem; }
+    
+    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
     .about-img-container { height: 300px; }
+    
+    .intro-text { font-size: 1.2rem; letter-spacing: 3px; }
+    
+    .container { padding: 0 1.5rem; }
 }
