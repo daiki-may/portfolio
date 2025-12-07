@@ -318,18 +318,18 @@ section { padding: 8rem 0; border-bottom: 1px solid #111; }
 /* Footer */
 footer { text-align: center; padding: 4rem 0; font-family: var(--font-code); font-size: 0.8rem; color: #555; }
 
-/* --- Mobile Optimization (Fix for Overlap & Size) --- */
+/* --- Mobile Optimization --- */
 @media(max-width: 768px) {
     /* Header Stack Layout */
     header {
-        padding: 0.8rem 1rem; /* パディングを削減 */
-        flex-direction: column; /* ロゴとメニューを縦に並べる */
-        gap: 0.8rem; /* 間隔を詰める */
-        background: rgba(8, 8, 8, 0.98); /* 視認性確保のため背景を濃く */
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
+        background: rgba(8, 8, 8, 0.98);
     }
     
     .logo { 
-        font-size: 0.9rem; /* ロゴサイズ縮小 */
+        font-size: 0.9rem;
         width: 100%;
         text-align: center;
         justify-content: center;
@@ -338,41 +338,47 @@ footer { text-align: center; padding: 4rem 0; font-family: var(--font-code); fon
 
     nav ul { 
         gap: 0.8rem; 
-        flex-wrap: nowrap; /* 1行に収める */
+        flex-wrap: nowrap;
         width: 100%;
         justify-content: center;
     }
     
     nav a { 
-        font-size: 0.7rem; /* メニュー文字サイズ縮小 */
+        font-size: 0.7rem;
         letter-spacing: 0;
-        padding: 0.3rem 0; /* タップ領域確保 */
+        padding: 0.3rem 0;
     }
 
-    /* Hero Fix: Add Top Padding to avoid overlap */
+    /* Hero Fix */
     .hero { 
-        padding-top: 180px; /* 重要：ヘッダー被り回避のために余白を大きく確保 */
+        padding-top: 180px;
         justify-content: flex-start; 
         min-height: auto;
         padding-bottom: 4rem;
     }
-    
-    .hero h1 {
-        font-size: 2.2rem; /* タイトル文字サイズ縮小 */
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-    }
-    
+    .hero h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1.5rem; }
     .typing-text { font-size: 1rem; }
     .hero-detail { font-size: 0.9rem; }
 
-    /* Other Mobile Adjustments */
+    /* Layout Adjustments */
     .section-title { font-size: 2.2rem; margin-bottom: 2rem; }
-    
     .about-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .about-img-container { height: 300px; }
-    
+    .about-img-container { height: 350px; }
     .intro-text { font-size: 1.2rem; letter-spacing: 3px; }
-    
     .container { padding: 0 1.5rem; }
+
+    /* --- Project Page Optimization (Mobile) --- */
+    
+    /* 1. Gallery: 2 Columns */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 強制的に2列 */
+        gap: 0.5rem; /* 隙間を狭くして表示領域を確保 */
+    }
+
+    /* 2. Abstract Text: Smaller size for readability */
+    section p {
+        font-size: 0.85rem; /* 文字サイズ縮小 */
+        line-height: 1.6;   /* 行間を詰める */
+        color: #ccc;        /* 読みやすい色味に */
+    }
 }
